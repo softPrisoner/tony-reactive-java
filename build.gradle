@@ -1,0 +1,25 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'java'
+}
+apply plugin: 'io.spring.dependency-management'
+group = 'com.tony'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+}
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-webflux') {
+        exclude module: "spring-boot-starter-netty"
+    }
+    compile "org.springframework.boot:spring-boot-starter-jetty"
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+    compile 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-test'
+    compile 'io.projectreactor:reactor-test'
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+}
