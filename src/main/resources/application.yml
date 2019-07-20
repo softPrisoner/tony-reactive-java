@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: tony_reactive_java
+  data:
+    #mongo configuration
+    mongodb:
+      port: 27017
+      host: mongodbservice1
+      database: admin
+      username: admin
+      password: admin
+  #redis configuration
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout:  5000ms
+#logback configuration
+logging:
+  config: classpath:logback-spring.xml
+  path: /app/log
